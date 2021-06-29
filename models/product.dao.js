@@ -10,6 +10,9 @@ productSchema.statics = {
     get: function(query, callback) {
         this.find(query, callback);
     },  
+    getById: function(id, callback) {
+        this.findById(id, callback);
+    },  
     update: function(query, updateData, callback) { 
         this.findOneAndUpdate(query, 
              {$set: updateData},{new: true}, callback);
