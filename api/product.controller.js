@@ -16,8 +16,8 @@ export function createProduct(req, res){
     })
 }
 
-export function getProducts(req, res){
-    Products.get({}, (err, elements) => {
+export function getAllProducts(req, res){
+    Products.get({}, {}, (err, elements) => {
         if(err){
             res.status(500).send(err);
         }else{
@@ -28,7 +28,8 @@ export function getProducts(req, res){
 }
 
 export function getProductById(req, res){
-    Products.getById(req.query.id, (err, element) => {
+    //req.query.id
+    Products.get({_id: req.params.pid}, {}, (err, element) => {
         if(err){
             res.status(500).send(err);
         }else{

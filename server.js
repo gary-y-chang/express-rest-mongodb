@@ -1,6 +1,5 @@
 import Props from './config/properties.js';
 import { dbConnect } from './config/database.js';
-import * as ProductController from './api/product.controller.js';
 import router from './api/routers.js'
 import express from 'express';
 
@@ -17,8 +16,6 @@ app.get("/", function (req, res){
 
 // call the database connectivity function
 dbConnect();
-
-//app.post('/product/add', ProductController.createProduct);
 
 app.listen(port, () =>{
     console.log(`Express app listening on port ${port}!`)
